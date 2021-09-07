@@ -1,0 +1,56 @@
+title {
+    margin-bottom: -100px;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number {
+    margin-left: 20px;
+}
+
+.wholeCart {
+    width: 750px;
+    margin: 20px auto;
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
+.deleteCart {
+    margin-left: 160px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: orange;
+    width: 50px;
+}
+
+.deleteItem {
+    float: right;
+    margin-right: 40px;
+    background-color: orange;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+}
+
+
+.cartList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItem {
+    width: 700px;
+    margin-bottom: 10px;
+    border-left: 3px solid orange;
+    list-style: none;
+}
+
+.emptyCartMessage {
+    text-align: center;
+}

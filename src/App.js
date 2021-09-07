@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Cart from './components/Cart/Cart';
+import Slider from './components/Slider/Slider';
+import React, {useState} from 'react';
 
 function App() {
+
+  const [cart, setCart] = useState([]);
+
+  const Add = (el) => {
+    setCart([...cart, el]);
+  }
+
+  const DeleteCart = () => {
+    setCart([]);
+  }
+  
+  const DeleteItem = (el) => {
+    const newCart = cart.filter(item => item !== el);
+    setCart(newCart)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Slider Add={Add} cart={cart} />
+      <div className='wholeCart'>
+        <Cart DeleteItem={DeleteItem} DeleteCart={DeleteCart} cart={cart} number={cart.length}/>
+      </div>
     </div>
   );
 }
